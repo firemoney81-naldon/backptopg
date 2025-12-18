@@ -1,23 +1,322 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Home</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <!--
-      Need a visual blank slate?
-      Remove all code in `styles.css`!
-    -->
-    <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="script.js"></script>
-  </head>
-  <body>
-    <nav>
-      <a href="/" aria-current="page">Home</a>
-      <a href="/page2.html">Other page</a>
-    </nav>
-    <main>
-      <h1>Home page</h1>
-    </main>
-  </body>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+  
+  
+  <title>이사 비용 아끼기가 하늘의 별 따기 같았나요? 여기서 모든 비교를 끝내세요</title>
+
+  
+
+      <style>
+        :root {
+            --bg-color: #f8f9fa;
+            --primary-accent: #6c5ce7;
+            --secondary-accent: #00cec9;
+            --text-dark: #2d3436;
+            --card-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        body {
+            font-family: 'Pretendard', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+        }
+
+        header h1 { font-size: 2.5rem; margin-bottom: 10px; font-weight: 800; }
+        header p { font-size: 1.1rem; opacity: 0.9; }
+
+        .container { max-width: 1200px; margin: -40px auto 60px; padding: 0 20px; }
+
+        /* 카테고리 레이아웃 (랜덤한 배치 느낌을 위한 그리드) */
+        .category-section {
+            margin-bottom: 50px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .category-title {
+            display: inline-block;
+            background: var(--secondary-accent);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            box-shadow: var(--card-shadow);
+        }
+
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .link-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border-left: 5px solid var(--primary-accent);
+            box-shadow: var(--card-shadow);
+        }
+
+        .link-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .link-card a {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            padding: 20px;
+        }
+
+        .link-card h3 {
+            margin: 0 0 10px 0;
+            font-size: 1.1rem;
+            color: var(--primary-accent);
+        }
+
+        .link-card p {
+            margin: 0;
+            font-size: 0.95rem;
+            color: #636e72;
+            word-break: keep-all;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 { font-size: 1.8rem; }
+            .links-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>이사 비용 아끼기가 하늘의 별 따기 같았나요? 여기서 모든 비교를 끝내세요</h1>
+</header>
+
+<div class="container" id="main-content">
+    </div>
+
+<script>
+    const rawData = [
+        { name: "도봉구포장이사", url: "https://movingikindz.withusgoat.com" },
+        { name: "세종포장이사", url: "https://movingjkinda.withusgoat.com" },
+        { name: "목포포장이사", url: "https://movingjkindb.withusgoat.com" },
+        { name: "부산해운대이사", url: "https://movingjkindc.withusgoat.com" },
+        { name: "전주원룸이사", url: "https://movingjkindd.withusgoat.com" },
+        { name: "진해이삿짐센터", url: "https://movingjkinde.withusgoat.com" },
+        { name: "이삿짐보관업체", url: "https://movingjkindf.withusgoat.com" },
+        { name: "주말이사비용", url: "https://movingjkindg.withusgoat.com" },
+        { name: "강서구이사", url: "https://movingjkindh.withusgoat.com" },
+        { name: "이사정리업체", url: "https://movingjkindi.withusgoat.com" },
+        { name: "일요일이사", url: "https://movingjkindj.withusgoat.com" },
+        { name: "원룸소형이사", url: "https://movingjkindk.withusgoat.com" },
+        { name: "목포용달이사", url: "https://movingjkindl.withusgoat.com" },
+        { name: "김천이사", url: "https://movingjkindm.withusgoat.com" },
+        { name: "김천포장이사", url: "https://movingjkindn.withusgoat.com" },
+        { name: "짐보관이사", url: "https://movingjkindo.withusgoat.com" },
+        { name: "원룸이사견적", url: "https://movingjkindp.withusgoat.com" },
+        { name: "의정부이삿짐", url: "https://movingjkindq.withusgoat.com" },
+        { name: "이삿짐센터추천", url: "https://movingjkindr.withusgoat.com" },
+        { name: "양주시포장이사", url: "https://movingjkinds.withusgoat.com" },
+        { name: "진해이사", url: "https://movingjkindt.withusgoat.com" },
+        { name: "광주포장이사업체", url: "https://movingjkindu.withusgoat.com" },
+        { name: "안동포장이사", url: "https://movingjkindv.withusgoat.com" },
+        { name: "25평포장이사비용", url: "https://movingjkindw.withusgoat.com" },
+        { name: "경산이사", url: "https://movingjkindx.withusgoat.com" },
+        { name: "이삿짐장기보관비용", url: "https://movingjkindy.withusgoat.com" },
+        { name: "전주보관이사", url: "https://movingjkindz.withusgoat.com" },
+        { name: "대전이사짐센터", url: "https://movingkkinda.withusgoat.com" },
+        { name: "부산이삿짐보관", url: "https://movingkkindb.withusgoat.com" },
+        { name: "해운대이삿짐센터", url: "https://movingkkindc.withusgoat.com" },
+        { name: "서울부산이사비용", url: "https://movingkkindd.withusgoat.com" },
+        { name: "이사가격", url: "https://movingkkinde.withusgoat.com" },
+        { name: "안중포장이사", url: "https://movingkkindf.withusgoat.com" },
+        { name: "포장이사청소", url: "https://movingkkindg.withusgoat.com" },
+        { name: "인천이사청소", url: "https://movingkkindh.withusgoat.com" },
+        { name: "오피스텔이사", url: "https://movingkkindi.withusgoat.com" },
+        { name: "프리미엄이사", url: "https://movingkkindj.withusgoat.com" },
+        { name: "대치동이사", url: "https://movingkkindk.withusgoat.com" },
+        { name: "제주이사업체", url: "https://movingkkindl.withusgoat.com" },
+        { name: "군산포장이사", url: "https://movingkkindm.withusgoat.com" },
+        { name: "아파트이사", url: "https://movingkkindn.withusgoat.com" },
+        { name: "부산사무실이사", url: "https://movingkkindo.withusgoat.com" },
+        { name: "부산이사업체추천", url: "https://movingkkindp.withusgoat.com" },
+        { name: "이천이삿짐센터", url: "https://movingkkindq.withusgoat.com" },
+        { name: "반포장이사준비", url: "https://movingkkindr.withusgoat.com" },
+        { name: "포장이사짐센터", url: "https://movingkkinds.withusgoat.com" },
+        { name: "대구포장이사추천", url: "https://movingkkindt.withusgoat.com" },
+        { name: "광산구이삿짐센터", url: "https://movingkkindu.withusgoat.com" },
+        { name: "반포장이사가격", url: "https://movingkkindv.withusgoat.com" },
+        { name: "이사꿀팁", url: "https://movingkkindw.withusgoat.com" },
+        { name: "안성포장이사", url: "https://movingkkindx.withusgoat.com" },
+        { name: "이사예약", url: "https://movingkkindy.withusgoat.com" },
+        { name: "포장보관이사", url: "https://movingkkindz.withusgoat.com" },
+        { name: "5톤보관이사비용", url: "https://movinglkinda.withusgoat.com" },
+        { name: "부분이사", url: "https://movinglkindb.withusgoat.com" },
+        { name: "의정부시이사", url: "https://movinglkindc.withusgoat.com" },
+        { name: "포장이사카드결제", url: "https://movinglkindd.withusgoat.com" },
+        { name: "세종이사업체", url: "https://movinglkinde.withusgoat.com" },
+        { name: "시흥포장이사", url: "https://movinglkindf.withusgoat.com" },
+        { name: "광명이삿짐센터", url: "https://movinglkindg.withusgoat.com" },
+        { name: "일산이사업체", url: "https://movinglkindh.withusgoat.com" },
+        { name: "평균이사비용", url: "https://movinglkindi.withusgoat.com" },
+        { name: "주말이사", url: "https://movinglkindj.withusgoat.com" },
+        { name: "안양이삿짐센터", url: "https://movinglkindk.withusgoat.com" },
+        { name: "이삿짐정리", url: "https://movinglkindl.withusgoat.com" },
+        { name: "경산포장이사", url: "https://movinglkindm.withusgoat.com" },
+        { name: "일반이사견적", url: "https://movinglkindn.withusgoat.com" },
+        { name: "2.5톤이사", url: "https://movinglkindo.withusgoat.com" },
+        { name: "광주광산구포장이사", url: "https://movinglkindp.withusgoat.com" },
+        { name: "짐보관창고", url: "https://movinglkindq.withusgoat.com" },
+        { name: "컨테이너짐보관", url: "https://movinglkindr.withusgoat.com" },
+        { name: "이천이사업체", url: "https://movinglkinds.withusgoat.com" },
+        { name: "부산포장이사잘하는곳", url: "https://movinglkindt.withusgoat.com" },
+        { name: "대전이사비용", url: "https://movinglkindu.withusgoat.com" },
+        { name: "안성이삿짐센터", url: "https://movinglkindv.withusgoat.com" },
+        { name: "사다리차이사비용", url: "https://movinglkindw.withusgoat.com" },
+        { name: "이삿짐보관료", url: "https://movinglkindx.withusgoat.com" },
+        { name: "이사계약금", url: "https://movinglkindy.withusgoat.com" },
+        { name: "이사비교견적", url: "https://movinglkindz.withusgoat.com" },
+        { name: "이사비교", url: "https://movingmkinda.withusgoat.com" },
+        { name: "컨테이너보관비용", url: "https://movingmkindb.withusgoat.com" },
+        { name: "보관이사업체순위", url: "https://movingmkindc.withusgoat.com" },
+        { name: "20평대이사비용", url: "https://movingmkindd.withusgoat.com" },
+        { name: "이사보관", url: "https://movingmkinde.withusgoat.com" },
+        { name: "서산이사", url: "https://movingmkindf.withusgoat.com" },
+        { name: "중랑구이삿짐센터", url: "https://movingmkindg.withusgoat.com" },
+        { name: "양평이사", url: "https://movingmkindh.withusgoat.com" },
+        { name: "이사짐센터견적", url: "https://movingmkindi.withusgoat.com" },
+        { name: "부산이사비용", url: "https://movingmkindj.withusgoat.com" },
+        { name: "반포장이사견적", url: "https://movingmkindk.withusgoat.com" },
+        { name: "군산이사", url: "https://movingmkindl.withusgoat.com" },
+        { name: "전주사무실이사", url: "https://movingmkindm.withusgoat.com" },
+        { name: "여수이사업체", url: "https://movingmkindn.withusgoat.com" },
+        { name: "노원구포장이사", url: "https://movingmkindo.withusgoat.com" },
+        { name: "이사비교사이트", url: "https://movingmkindp.withusgoat.com" },
+        { name: "전국이사", url: "https://movingmkindq.withusgoat.com" },
+        { name: "사다리차이사", url: "https://movingmkindr.withusgoat.com" },
+        { name: "평택원룸이사", url: "https://movingmkinds.withusgoat.com" },
+        { name: "포장이사입주청소", url: "https://movingmkindt.withusgoat.com" },
+        { name: "이삿짐5톤", url: "https://movingmkindu.withusgoat.com" },
+        { name: "요즘이사비용", url: "https://movingmkindv.withusgoat.com" },
+        { name: "중랑구포장이사", url: "https://movingmkindw.withusgoat.com" },
+        { name: "일산이삿짐센터", url: "https://movingmkindx.withusgoat.com" },
+        { name: "이사방문견적", url: "https://movingmkindy.withusgoat.com" },
+        { name: "부산이삿짐보관비용", url: "https://movingmkindz.withusgoat.com" },
+        { name: "기장포장이사", url: "https://movingnkinda.withusgoat.com" },
+        { name: "인테리어보관이사", url: "https://movingnkindb.withusgoat.com" },
+        { name: "짐보관이사비용", url: "https://movingnkindc.withusgoat.com" },
+        { name: "오피스텔포장이사비용", url: "https://movingnkindd.withusgoat.com" },
+        { name: "5톤이사", url: "https://movingnkinde.withusgoat.com" },
+        { name: "포장이사일반이사", url: "https://movingnkindf.withusgoat.com" }
+    ];
+
+    const categories = [
+        "🏢 프리미엄 비즈니스 & 사무실 이사",
+        "🏠 아파트/빌라 대가족 포장이사",
+        "📦 보관이사의 모든 것 (컨테이너/장기)",
+        "🚚 1인 가구를 위한 스마트 원룸이사",
+        "✨ 입주청소 & 완벽 정리 패키지",
+        "💰 거품 뺀 가성비 이사 견적 비교",
+        "🗺️ 전국구 지역 전문 이사 네트워크",
+        "⚡ 바쁜 현대인을 위한 긴급/주말 이사",
+        "💎 상위 1%를 위한 고품격 이사 서비스",
+        "🛠️ 사다리차 & 특수 짐 운반 전문"
+    ];
+
+    const slogans = [
+        "당신의 소중한 추억까지 안전하게 옮겨드립니다.",
+        "복잡한 이사, 이제는 클릭 한 번으로 해결하세요.",
+        "새로운 시작의 설렘을 완성하는 완벽한 서비스.",
+        "꼼꼼한 포장부터 뒷정리까지, 손끝 하나 까딱 마세요.",
+        "거품은 빼고 진심을 채웠습니다. 정직한 견적 보장.",
+        "이사 날짜가 고민이라면? 최적의 타이밍을 제안합니다.",
+        "짐 보관도 스마트하게! 24시간 안전 보관 시스템.",
+        "우리 동네 이사 고수들을 한자리에 모았습니다."
+    ];
+
+    function shuffle(array) {
+        return array.sort(() => Math.random() - 0.5);
+    }
+
+    function renderPage() {
+        const container = document.getElementById('main-content');
+        const selectedCount = Math.floor(Math.random() * (108 - 83 + 1)) + 83;
+        const shuffledData = shuffle([...rawData]).slice(0, selectedCount);
+        const shuffledCats = shuffle([...categories]);
+
+        shuffledCats.forEach(cat => {
+            const section = document.createElement('section');
+            section.className = 'category-section';
+            
+            const title = document.createElement('div');
+            title.className = 'category-title';
+            title.innerText = cat;
+            section.appendChild(title);
+
+            const grid = document.createElement('div');
+            grid.className = 'links-grid';
+
+            // 카테고리당 랜덤하게 8~11개 정도 배치
+            const itemsPerCat = Math.floor(Math.random() * 4) + 8;
+            const items = shuffledData.splice(0, itemsPerCat);
+
+            items.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'link-card';
+                const slogan = slogans[Math.floor(Math.random() * slogans.length)];
+                
+                card.innerHTML = `
+                    <a href="${item.url}" target="_blank" rel="noopener noreferrer">
+                        <h3>${item.name}</h3>
+                        <p>👉 ${slogan} 클릭하여 상세 내용과 견적을 확인해보세요. 새로운 거주지에서의 시작을 ${item.name}이(가) 함께합니다.</p>
+                    </a>
+                `;
+                grid.appendChild(card);
+            });
+
+            section.appendChild(grid);
+            container.appendChild(section);
+        });
+    }
+
+    renderPage();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "포장이사 서비스 비교",
+      "description": "전국 주요 이사업체 견적 및 서비스 비교"
+    }
+  ]
+}
+</script>
+
+</body>
 </html>
